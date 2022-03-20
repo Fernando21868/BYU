@@ -11,7 +11,7 @@ with open('life-expectancy.csv') as lines:
         if index==0:
             continue
 
-        line=line.split(',')
+        line=line.strip().split(',')
         expectancy=float(line[3])
 
         if expectancy>highest:
@@ -39,7 +39,7 @@ print(f'The overall max life expectancy is: {highest} from {country_h} in {year_
 print(f'The overall min life expectancy is: {lowest} from {country_l} in {year_l}')
 print()
 
-print('For the year 1959: ')
-print(f'The average life expectancy across all countries was {sum(expectancies)/len(expectancies)}')
+print(f'For the year {interest_year}: ')
+print(f'The average life expectancy across all countries was {sum(expectancies)/len(expectancies):.2f}')
 print(f'The max life expectancy was in {country_interest_h} with {highest_interest}')
 print(f'The max life expectancy was in {country_interest_l} with {lowest_interest}')
