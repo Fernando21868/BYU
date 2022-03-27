@@ -1,5 +1,9 @@
-line = "     text"
+def display_numbers(x, y):
+    return 10
 
-line.strip()
 
-print(line)
+x = 3
+y = 4
+x = display_numbers(x, y)
+
+print(x)
