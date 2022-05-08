@@ -36,6 +36,12 @@ def draw_sky(canvas, scene_width, scene_height):
 
 
 def draw_moon(canvas):
+    """Draw the moon in the sky.
+    Parameters
+        canvas: The canvas where this function
+            will draw the moon.
+    Return: nothing
+    """
     for i in range(18):
         colors = f'gray{71-i}'
         draw_oval(canvas, 150+i, 500+i, 0-i, 350 -
@@ -54,6 +60,12 @@ def draw_moon(canvas):
 
 
 def draw_clouds(canvas):
+    """Draw clouds in the sky randomly.
+    Parameters
+        canvas: The canvas where this function
+            will draw clouds.
+    Return: nothing
+    """
     for i in range(20):
         random_clouds = random.random()
         if random_clouds > .5:
@@ -65,6 +77,12 @@ def draw_clouds(canvas):
 
 
 def draw_stars(canvas):
+    """Draw stars in the sky randomly.
+    Parameters
+        canvas: The canvas where this function
+            will draw stars.
+    Return: nothing
+    """
     for i in range(50):
         random_star = random.random()
         if random_star > .5:
@@ -75,14 +93,10 @@ def draw_stars(canvas):
 
 
 def draw_pine_tree(canvas):
-    """Draw a single pine tree.
+    """Draw pins randomly.
     Parameters
         canvas: The canvas where this function
-            will draw a pine tree.
-        center_x, bottom: The x and y location in pixels where
-            this function will draw the bottom of a pine tree.
-        height: The height in pixels of the pine tree that
-            this function will draw.
+            will draw pins randomly.
     Return: nothing
     """
     for x in range(200):
@@ -127,6 +141,7 @@ def draw_ground(canvas, scene_width, scene_height):
     """Draw the ground and all the objects on the ground."""
     draw_rectangle(canvas, 0, 0,
                    scene_width, scene_height / 3, width=0, fill="saddleBrown")
+    # Draw a river on the ground
     draw_polygon(canvas, 300, 170, 400, 170, 450,
                  0, 350, 0, fill="steelBlue1")
     draw_pine_tree(canvas)
