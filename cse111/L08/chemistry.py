@@ -1,16 +1,4 @@
 def main():
-    # periodic_table_list = make_periodic_table()
-    # print(" _______________________________")
-    # print("|     name      |  atomic mass  |")
-    # print("|_______________|_______________|")
-    # for key, value in periodic_table_list.items():
-    #     name = value[0]
-    #     atomic_mass = value[1]
-    #     name = '{name: <{width}}'.format(name=name, width=15)
-    #     atomic_mass = '{atomic_mass: <{width}}'.format(
-    #         atomic_mass=atomic_mass, width=15)
-    #     print(f"|{name}|{atomic_mass}|")
-    # print("|_______________|_______________|")
     # Get a chemical formula for a molecule from the user.
     formula = input("Enter the molecular formula of the sample: ")
     # Get the mass of a chemical sample in grams from the user.
@@ -30,9 +18,9 @@ def main():
     # Compute the number of moles in the sample.
     number_moles = mass_chemical_formula/molar_mass
     # Print the molar mass.
-    print(molar_mass)
+    print(f"{molar_mass:.5f} grams/mole")
     # Print the number of moles.
-    print(number_moles)
+    print(f"{number_moles:.5f} moles")
     # Call the know_molecules function and
     # store the know molecules in a variable.
     known_molecules_dict = know_molecules()
@@ -46,7 +34,12 @@ def get_formula_name(formula, known_molecules_dict):
     """Try to find formula in the known_molecules_dict.
     If formula is in the known_molecules_dict, return
     the name of the chemical formula; otherwise return
-    "unknown compound".
+    "unknown compound.
+    Parameters
+        formula: a string that contains a chemical formula
+        known_molecules_dict: dictionary returned
+            from know_molecules
+    Return: the name of the chemical formula or otherwise return unknown compound 
     """
     if formula in known_molecules_dict:
         return known_molecules_dict[formula]
@@ -55,6 +48,10 @@ def get_formula_name(formula, known_molecules_dict):
 
 
 def make_periodic_table():
+    """Make a dictionary with the symbol, name and atomic mass.
+    Parameters
+    Return: A dictionary with the data mentioned above.
+    """
     periodic_table_list = {
         # [symbol, name, atomic_mass]
         "Ac": ["Actinium", 227],
@@ -156,6 +153,10 @@ def make_periodic_table():
 
 
 def know_molecules():
+    """Make a dictionary with the symbol and name of known molecules.
+    Parameters
+    Return: A dictionary with the data of known molecules.
+    """
     known_molecules_dict = {
         "Al2O3": "aluminum oxide",
         "CH3OH": "methanol",
